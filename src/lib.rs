@@ -74,5 +74,21 @@ pub mod shop{
 			println!("Bill  \t\t\t: {} \nBill after gst \t\t: {} \nbill after {}% discount \t: {}",self.result.0,self.result.1,self.discount, self.result.2);
 			println!("--------------------------------------------------------------");
 		}
+
+        pub fn get_bill(&mut self) -> (i32,i32){
+            self.get_price();
+			self.price_with_gst();
+
+            (self.result.0,self.result.1)
+        }
+
+        pub fn get_bill_dis(&mut self) -> (i32,i32,i32){
+            self.get_price();
+            self.price_with_gst();
+            self.discount_price();
+
+            self.result
+
+        }
     }
 }
