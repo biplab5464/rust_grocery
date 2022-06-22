@@ -18,10 +18,11 @@ fn main() {
     for ele in arr{
         let mut bill = shop::Bill::new_bill(ele.0.to_string(),ele.1,0);
         //bill.print_bill();
-        let mut result = bill.get_bill();
-        total = total + result.1;
+        let result = bill.get_bill();
+        total = total + result.0;
     }
 
+    total = total + (total * 12) /100 ;
     println!("Total : {}",total);
 
     //let mut bill = shop::Bill::new_bill(fruit,num,3);

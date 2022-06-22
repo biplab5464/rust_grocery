@@ -9,6 +9,13 @@ pub mod shop{
 
     impl Bill{
 
+        /**
+         * DESC : Create a new Bill variable
+         * @param fruit String :  Name of the fruit
+         * @param num  i32 : number of fruit
+         * @param discount i32 : if no discount then pass 0 otherwise the discount the anie
+         * @return Bill : a variable of struct BILL
+         */
         pub fn new_bill(fruit : String , num : i32 , discount :i32) -> Bill {
             Bill{
                 fruit,
@@ -58,6 +65,11 @@ pub mod shop{
             }
         }
 
+        /**
+         * DESC : print the bill amount without discount (call if their no discount
+         * no param
+         * return nothing
+         */
         pub fn print_bill(&mut self){
             self.get_price();
             self.price_with_gst();
@@ -66,6 +78,11 @@ pub mod shop{
 			println!("--------------------------------------------------------------");
         }
 
+        /**
+         * DESC : print the bill amount with discount
+         * nor param
+         * retrun nothing
+         */
 		pub fn print_bill_dis(&mut self){
 			self.get_price();
 			self.price_with_gst();
@@ -73,8 +90,13 @@ pub mod shop{
 			println!("--------------------------------------------------------------");
 			println!("Bill  \t\t\t: {} \nBill after gst \t\t: {} \nbill after {}% discount \t: {}",self.result.0,self.result.1,self.discount, self.result.2);
 			println!("--------------------------------------------------------------");
-		}
-
+		} 
+        
+        /**
+         * DESC : retrun the bill without discount 
+         * no param
+         * return (i32,i32) : a tuple of price and price with added gst 
+         */
         pub fn get_bill(&mut self) -> (i32,i32){
             self.get_price();
 			self.price_with_gst();
@@ -82,6 +104,11 @@ pub mod shop{
             (self.result.0,self.result.1)
         }
 
+        /**
+         * DESC : get bill with dscount
+         * no param
+         * return (i32,i32,i32) : a tuple with price , price with gst and price after discount
+         */
         pub fn get_bill_dis(&mut self) -> (i32,i32,i32){
             self.get_price();
             self.price_with_gst();
