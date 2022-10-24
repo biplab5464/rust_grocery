@@ -1,27 +1,31 @@
-//use std::io;
+use std::io;
 use store::shop; 
 use std::collections::HashMap;
 
 fn main() {
 
-    // let mut fruit = String::new();
-    // let mut num_str = String::new();
+    let mut fruit = String::new();
+    let mut num_str = String::new();
+    let mut total : i32 = 0;
     let mut arr = HashMap::new(); 
 
-    // println!("Enter the fruit name :");
-    // io::stdin().read_line(&mut fruit).unwrap();
+    for i in 0..3{
+        println!("Enter the fruit name :");
+        io::stdin().read_line(&mut fruit).unwrap();
 
-    // println!("Enter the number of fruits :");
-    // io::stdin().read_line(&mut num_str).unwrap();
-    // let num : i32 = num_str.trim().parse().unwrap();
-    let mut total : i32 = 0;
+        println!("Enter the number of fruits :");
+        io::stdin().read_line(&mut num_str).unwrap();
+        let mut num : i32 = num_str.trim().parse();
+        
+        arr.insert(fruit.clone(),num);
 
+        // println!("Do you want to enter more fruits(y/n)");
 
-
+    }
     
-    arr.entry(String::from("apple")).or_insert(12);
-    arr.entry(String::from("banana")).or_insert(35);
-    arr.entry(String::from("mango")).or_insert(6);
+    arr.entry(String::from("apple")).or_insert(0);
+    arr.entry(String::from("banana")).or_insert(0);
+    arr.entry(String::from("mango")).or_insert(0);
     
 
     for (key,value) in &arr{

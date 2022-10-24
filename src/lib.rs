@@ -95,7 +95,7 @@ pub mod shop{
         /**
          * DESC : retrun the bill without discount 
          * no param
-         * return (i32,i32) : a tuple of price and price with added gst 
+         * @return (i32,i32) : a tuple of price and price with added gst 
          */
         pub fn get_bill(&mut self) -> (i32,i32){
             self.get_price();
@@ -107,7 +107,7 @@ pub mod shop{
         /**
          * DESC : get bill with dscount
          * no param
-         * return (i32,i32,i32) : a tuple with price , price with gst and price after discount
+         * @return (i32,i32,i32) : a tuple with price , price with gst and price after discount
          */
         pub fn get_bill_dis(&mut self) -> (i32,i32,i32){
             self.get_price();
